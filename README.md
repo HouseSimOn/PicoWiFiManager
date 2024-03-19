@@ -1,37 +1,26 @@
-[![Build](https://github.com/HouseSimOn/PicoSdkStartTemplate/actions/workflows/build_cmake.yml/badge.svg)](https://github.com/HouseSimOn/PicoSdkStartTemplate/actions/workflows/build_cmake.yml)
+[![Build](https://github.com/HouseSimOn/PicoWifiManager/actions/workflows/build_cmake.yml/badge.svg)](https://github.com/HouseSimOn/PicoWifiManager/actions/workflows/build_cmake.yml)
 
-# PicoSdkStartTemplate
-Start repository template with Pi Pico and Pi PicoW SDK
+# Pico Wifi Manager
+WiFi Manager for Pico W.
 
-## Template version
-__0.0.1__
+## Repository template
+Repository created based on [this template](https://github.com/HouseSimOn/PicoSdkStartTemplate) in version __0.0.1__.
 
-# Documentation
+# SDK Documentation
 https://raspberrypi.github.io/pico-sdk-doxygen/modules.html
 
-## Performed steps
+## Setup
 
 Platform: Ubuntu
 
-Based on: https://github.com/raspberrypi/pico-sdk
+1. Clone repository.
+2. Call `git submodule update --init` in the main directory and then go to the pico-sdk and call this command again. (or `git submodule update --init --recursive`)
 
-1. Install `sudo apt install cmake gcc-arm-none-eabi libnewlib-arm-none-eabi libstdc++-arm-none-eabi-newlib`.
-2. Repository created and cloned `git clone https://github.com/HouseSimOn/PicoSdkStartTemplate.git`.
-3. Added submodule using `git submodule add https://github.com/raspberrypi/pico-sdk.git Sources/Sdk/pico-sdk` command.
-4. Commit: `git commit -m "Added pico-sdk submodule"`.
-5. Call `git submodule update --init` in the main directory and then go to the pico-sdk and call this command again.
-6. Create settings.json for intellisense work with following content
-    ```json
-    { 
-        "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools" 
-    } 
-    ```
-
-### printf - via USB (Ubuntu minicom)
+### printf - via USB
 1. To CMakeLists.txt add following lines:
     ```
-    pico_enable_stdio_usb(PicoSdkStartTemplate 1)
-    pico_enable_stdio_uart(PicoSdkStartTemplate 0)
+    pico_enable_stdio_usb(WifiManager 1)
+    pico_enable_stdio_uart(WifiManager 0)
     ```
 2. Find connected device: `ls -l /dev/ttyUSB* /dev/ttyACM*`
 3. Start minicom: `sudo minicom -b 115200 -o -D /dev/ttyACM0` 
@@ -42,9 +31,13 @@ Based on: https://github.com/raspberrypi/pico-sdk
     ```
     ls /dev/tty.usb* 
     ```
-2. Run `screen` application
+2. Run screen application
     ```
-    screen /dev/tty.usbmodem1101 115200
+    screen /dev/tty.usbmodem101 115200
+    ```
+3. Run `minicom`
+    ```
+    minicom -D /dev/tty.usbmodem1101 -b 115200
     ```
 
 ### `picotool` usage

@@ -1,0 +1,51 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "ProgramPicoTool",
+            "type": "shell",
+            "command": "picotool load -v -x build/WifiManager.uf2 -f",
+            "dependsOn": "Build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "make",
+            "options": {
+                "cwd": "build",
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "ProgramAndLogPicoTool",
+            "type": "shell",
+            "command": "source Scripts/ProgramAndLog.sh",
+            "problemMatcher": []
+        },
+        {
+            "label": "RebootPicoTool",
+            "type": "shell",
+            "command": "picotool reboot -f",
+            "problemMatcher": []
+        },
+        {
+            "label": "RunScreen",
+            "type": "shell",
+            "command": "screen /dev/tty.usbmodem102 115200",
+            "problemMatcher": []
+        },
+        {
+            "label": "RunMinicom",
+            "type":"shell",
+            "command": "minicom -D /dev/tty.usbmodem1102 -b 115200",
+            "problemMatcher": []
+        }
+    ]
+}

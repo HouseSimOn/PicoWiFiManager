@@ -30,6 +30,11 @@ jobs:
         cmake ..
         cd ..
 
+    - name: Generate Pages
+      run: |
+        cd build
+        make pages
+
     - name: Build
       run: |
         cd build

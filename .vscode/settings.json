@@ -36,6 +36,10 @@
         "iterator": "c",
         "memory": "c",
         "stdbool.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "time.h": "c",
+        "dhcpserver.h": "c",
+        "ip_addr.h": "c",
+        "wifi.h": "c"
     }
 } 

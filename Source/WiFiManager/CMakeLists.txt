@@ -1,0 +1,6 @@
+list(
+  APPEND SOURCES
+  "${CMAKE_CURRENT_SOURCE_DIR}/WiFiManager.c"
+)
+
+set(SOURCES "${SOURCES}" PARENT_SCOPE)

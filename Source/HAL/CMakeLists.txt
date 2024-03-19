@@ -1,0 +1,11 @@
+add_subdirectory(Led)
+add_subdirectory(WiFi)
+
+list(
+    APPEND INCLUDE_DIRS
+    "${CMAKE_CURRENT_SOURCE_DIR}/Led"
+    "${CMAKE_CURRENT_SOURCE_DIR}/WiFi"
+)
+
+set(SOURCES "${SOURCES}" PARENT_SCOPE)
+set(INCLUDE_DIRS "${INCLUDE_DIRS}" PARENT_SCOPE)

@@ -1,0 +1,5 @@
+list(
+  APPEND SOURCES
+)
+
+set(SOURCES "${SOURCES}" PARENT_SCOPE)

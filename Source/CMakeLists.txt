@@ -1,8 +1,16 @@
-add_subdirectory(Led)
+add_subdirectory(HAL)
+add_subdirectory(WebServer)
+add_subdirectory(Logger)
+add_subdirectory(Commands)
+add_subdirectory(WiFiManager)
 
 list(
     APPEND INCLUDE_DIRS
-    "${CMAKE_CURRENT_SOURCE_DIR}/Led"
+    "${CMAKE_CURRENT_SOURCE_DIR}/HAL"
+    "${CMAKE_CURRENT_SOURCE_DIR}/WebServer"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Logger"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Commands"
+    "${CMAKE_CURRENT_SOURCE_DIR}/WiFiManager"
 )
 
 list(
