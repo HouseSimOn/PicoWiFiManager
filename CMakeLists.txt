@@ -50,8 +50,8 @@ if(${PICO_BOARD} STREQUAL "pico_w")
     # target_link_libraries(WifiManager pico_cyw43_arch_lwip_poll pico_lwip_http)
 endif()
 
-pico_enable_stdio_usb(WifiManager 0)
-pico_enable_stdio_uart(WifiManager 1)
+pico_enable_stdio_usb(WifiManager 1) 
+pico_enable_stdio_uart(WifiManager 0) # use it for PicoProbe debugger
 
 # create map/bin/hex/uf2 file in addition to ELF.
 pico_add_extra_outputs(WifiManager)
